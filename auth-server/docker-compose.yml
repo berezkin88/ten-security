@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  db:
+    image: postgres:12.1
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=sa
+      - POSTGRES_PASSWORD=YWJhYmFnYWxhbWFnYQ==
+      - POSTGRES_DB=spring
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+volumes:
+  postgres-data:
